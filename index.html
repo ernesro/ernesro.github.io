@@ -40,7 +40,6 @@
     line-height:1.65;overflow-x:hidden;font-weight:400;
   }
 
-  /* subtle sun + sea wash */
   body::before{
     content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
     background:
@@ -72,9 +71,6 @@
   .mobile.open{display:flex}
   .mobile a{color:var(--ink2);text-decoration:none;font-size:1.1rem;font-weight:500}
 
-  /* ── decorative shapes (Memphis-soft) ── */
-  .arch{position:absolute;border-radius:100% 100% 0 0;z-index:0}
-
   /* ── HERO ── */
   #hero{min-height:100vh;display:flex;align-items:center;padding-top:64px;position:relative;overflow:hidden}
   .hero-sun{position:absolute;top:14%;right:-4%;width:300px;height:300px;border-radius:50%;
@@ -94,7 +90,7 @@
     margin-top:1.6rem;letter-spacing:.05em;animation:up .6s .25s both}
   .hero-role .sep{color:var(--ochre);margin:0 .45rem;font-weight:700}
 
-  .hero-desc{font-size:1.02rem;color:var(--ink2);margin-top:1.4rem;max-width:540px;
+  .hero-desc{font-size:1.02rem;color:var(--ink2);margin-top:1.4rem;max-width:560px;
     line-height:1.8;animation:up .6s .35s both}
 
   .hero-ctas{display:flex;gap:1rem;margin-top:2.4rem;flex-wrap:wrap;animation:up .6s .45s both}
@@ -137,7 +133,7 @@
   .pcard-live{font-family:var(--mono);font-size:.68rem;color:var(--olive);background:rgba(122,132,80,.14);
     padding:5px 12px;border-radius:100px;letter-spacing:.06em;display:inline-flex;align-items:center;gap:6px}
   .pcard-live::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--olive)}
-  .pcard-d{font-size:.96rem;color:var(--ink2);line-height:1.8;max-width:640px}
+  .pcard-d{font-size:.96rem;color:var(--ink2);line-height:1.8;max-width:680px}
   .ptags{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem}
   .ptag{font-family:var(--mono);font-size:.7rem;color:var(--ink2);background:var(--sand);
     padding:5px 12px;border-radius:100px;letter-spacing:.03em}
@@ -175,27 +171,15 @@
   .lrow .ln{font-size:.92rem;color:var(--ink);font-weight:500}
   .lrow .lv{font-family:var(--mono);font-size:.74rem;color:var(--aegean)}
 
-  /* ── CONTACT ── */
-  .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-  .cl p{font-size:.98rem;color:var(--ink2);line-height:1.8;margin-bottom:1.8rem}
-  .clinks{display:flex;flex-direction:column;gap:.9rem}
-  .clk{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:.84rem;
-    color:var(--ink2);text-decoration:none;padding:14px 18px;background:var(--cream2);
+  /* ── CONTACT (simplified, no form) ── */
+  .contact-block{max-width:680px}
+  .contact-intro{font-size:1.05rem;color:var(--ink2);line-height:1.8;margin-bottom:2.4rem}
+  .clinks{display:flex;flex-direction:column;gap:1rem;max-width:480px}
+  .clk{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:.88rem;
+    color:var(--ink2);text-decoration:none;padding:16px 20px;background:var(--cream2);
     border:1px solid var(--line);border-radius:14px;transition:all .2s}
   .clk:hover{color:var(--terra);border-color:var(--terra);transform:translateX(5px)}
   .clk .ic{color:var(--aegean);font-size:1.1rem;width:18px;text-align:center}
-  .cr{background:var(--cream2);border:1px solid var(--line);border-radius:20px;padding:2rem}
-  .fg{margin-bottom:1.2rem}
-  .fl{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--ink3);margin-bottom:.5rem}
-  .fi{width:100%;background:var(--cream);border:1px solid var(--line2);border-radius:12px;
-    padding:12px 15px;color:var(--ink);font-family:var(--head);font-size:.9rem;outline:none;transition:border-color .2s}
-  .fi:focus{border-color:var(--aegean)}
-  .fi::placeholder{color:var(--ink3)}
-  textarea.fi{resize:vertical;min-height:110px}
-  .fbtn{width:100%;font-weight:600;font-size:.9rem;padding:14px;background:var(--terra);color:var(--cream);
-    border:none;cursor:pointer;border-radius:100px;transition:all .2s;box-shadow:0 6px 20px rgba(200,100,60,.3)}
-  .fbtn:hover{background:var(--terra-deep);transform:translateY(-2px)}
 
   /* ── FOOTER ── */
   footer{border-top:1px solid var(--line);padding:2.2rem 0}
@@ -218,7 +202,6 @@
     .exp-what{padding-left:1.6rem;border-bottom:none}
     .exp-row:not(:last-child) .exp-what{border-bottom:1px solid var(--line)}
     .about-grid{grid-template-columns:1fr}
-    .cgrid{grid-template-columns:1fr;gap:2.5rem}
     .stack-grid{grid-template-columns:1fr 1fr}
   }
   @media(max-width:520px){
@@ -256,11 +239,11 @@
   <div class="wrap hero-inner">
     <div class="kicker">Backend Developer · Torrevieja</div>
     <h1 class="hero-title">Ernestas<span class="l2">Urbonas</span></h1>
-    <p class="hero-role">JAVA <span class="sep">·</span> SPRING BOOT <span class="sep">·</span> DOCKER <span class="sep">·</span> POSTGRESQL</p>
+    <p class="hero-role">JAVA <span class="sep">·</span> SPRING BOOT <span class="sep">·</span> KAFKA <span class="sep">·</span> DOCKER</p>
     <p class="hero-desc">
-      Desarrollador backend apasionado por Java y Spring Boot. Aprendo haciendo:
-      ahora desarrollo una API de tienda de videojuegos con gestión de pedidos,
-      transacciones, seguridad JWT y Flyway. Busco un equipo donde seguir creciendo.
+      Desarrollador backend apasionado por Java y Spring Boot. Acabo de terminar una API de
+      tienda de videojuegos desplegada en producción: JWT con refresh tokens, autorización por roles,
+      arquitectura event-driven con Kafka, 44 tests y todo dockerizado. Busco un equipo donde seguir creciendo.
     </p>
     <div class="hero-ctas">
       <a href="#proyectos" class="btn btn-p">Ver proyectos →</a>
@@ -279,12 +262,14 @@
     <div class="stack-grid rv">
       <div class="scol">
         <div class="scol-h h-be">Backend</div>
-        <div class="sit on">Java 17 + Spring Boot</div>
+        <div class="sit on">Java 21 + Spring Boot 3</div>
+        <div class="sit on">REST APIs</div>
+        <div class="sit on">Spring Security / JWT</div>
+        <div class="sit on">JPA / Hibernate</div>
         <div class="sit on">PostgreSQL</div>
-        <div class="sit on">Docker & Compose</div>
-        <div class="sit">REST APIs</div>
-        <div class="sit">Spring Security / JWT</div>
-        <div class="sit">JPA / Hibernate</div>
+        <div class="sit on">Flyway</div>
+        <div class="sit on">Apache Kafka</div>
+        <div class="sit on">JUnit 5 + Mockito</div>
         <div class="sit">Apache POI</div>
       </div>
       <div class="scol">
@@ -295,16 +280,19 @@
       </div>
       <div class="scol">
         <div class="scol-h h-in">Infra & DevOps</div>
-        <div class="sit on">Docker</div>
+        <div class="sit on">Docker & Compose</div>
+        <div class="sit on">Render</div>
         <div class="sit">GitHub Actions</div>
+        <div class="sit">Linux server</div>
       </div>
       <div class="scol">
         <div class="scol-h h-to">Herramientas</div>
         <div class="sit on">IntelliJ IDEA</div>
-        <div class="sit">Git / GitHub</div>
+        <div class="sit on">Git / GitHub</div>
+        <div class="sit on">Maven</div>
+        <div class="sit on">Swagger / OpenAPI</div>
         <div class="sit">Postman</div>
         <div class="sit">DBeaver</div>
-        <div class="sit">Maven</div>
       </div>
     </div>
   </div>
@@ -321,27 +309,33 @@
       <div class="pcard-banner"></div>
       <div class="pcard-body">
         <div class="pcard-head">
-          <h3 class="pcard-t">Game Store</h3>
+          <h3 class="pcard-t">Game Store API</h3>
           <span class="pcard-live">Online</span>
         </div>
         <p class="pcard-d">
-          API de tienda de videojuegos con Java y Spring Boot. Gestión de pedidos con
-          entidades Order y OrderItem y transacciones atómicas, seguridad con JWT y
-          versionado de base de datos con Flyway. Desarrollada aplicando principios SOLID
-          y buenas prácticas de diseño. Proyecto completamente dockerizado.
+          API REST de tienda de videojuegos desplegada en producción con Spring Boot 3.3 y Java 21.
+          Incluye autenticación JWT con refresh tokens, autorización por roles con <code>@PreAuthorize</code>,
+          rate limiting con Bucket4j, arquitectura event-driven con Kafka (pedidos, stock, notificaciones),
+          44 tests con JUnit 5 y Mockito (unitarios + integración con MockMvc), migraciones con Flyway,
+          documentación interactiva con Swagger/OpenAPI y entorno completamente dockerizado.
         </p>
         <div class="ptags">
-          <span class="ptag">Java</span>
-          <span class="ptag">Spring Boot</span>
+          <span class="ptag">Java 21</span>
+          <span class="ptag">Spring Boot 3</span>
+          <span class="ptag">Spring Security</span>
+          <span class="ptag">JWT</span>
+          <span class="ptag">Kafka</span>
           <span class="ptag">PostgreSQL</span>
           <span class="ptag">Flyway</span>
-          <span class="ptag">JWT</span>
           <span class="ptag">Docker</span>
-          <span class="ptag">REST API</span>
-          <span class="ptag">SOLID</span>
+          <span class="ptag">JUnit 5</span>
+          <span class="ptag">Mockito</span>
+          <span class="ptag">Swagger</span>
+          <span class="ptag">Render</span>
         </div>
         <div class="plinks">
-          <a href="https://gamestore-ernestas.netlify.app" class="pl pl-p" target="_blank" rel="noopener">Ver demo →</a>
+          <a href="https://gamestore-ernestas.netlify.app" class="pl pl-p" target="_blank" rel="noopener">Demo frontend →</a>
+          <a href="https://gamestore-api-uycr.onrender.com/swagger-ui/index.html" class="pl pl-p" target="_blank" rel="noopener">Swagger API →</a>
           <a href="https://github.com/ernesro/GameStore" class="pl pl-s" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
@@ -360,13 +354,13 @@
       <div class="exp-row now">
         <div class="exp-when">JUN 2025 — HOY</div>
         <div class="exp-what">
-          <div class="exp-co">Proyecto Personal</div>
+          <div class="exp-co">Proyecto Personal — Game Store API</div>
           <div class="exp-ro">Desarrollador Backend</div>
           <p class="exp-dsc">
-            Desarrollo de una API de tienda de videojuegos con Java y Spring Boot:
-            entidades Order y OrderItem con transacciones atómicas, seguridad con JWT
-            y versionado de base de datos con Flyway. Aplicación de principios SOLID
-            y buenas prácticas de diseño. Proyecto dockerizado.
+            Diseño y desarrollo end-to-end de una API REST production-ready: arquitectura
+            en capas con principios SOLID, seguridad con JWT y roles, arquitectura event-driven
+            con Kafka, testing exhaustivo con JUnit 5 y Mockito, migraciones con Flyway,
+            containerización con Docker y despliegue en Render.
           </p>
         </div>
       </div>
@@ -425,8 +419,8 @@
         <div class="abox-t">Sobre mí</div>
         <p class="abox-d">
           Desarrollador backend apasionado por Java y Spring Boot. Me gusta aprender
-          haciendo, resolver problemas reales y escribir código mantenible. Busco un
-          equipo donde seguir creciendo mientras aporto valor desde el primer día.
+          haciendo, resolver problemas reales y escribir código mantenible y bien testeado.
+          Busco un equipo donde seguir creciendo mientras aporto valor desde el primer día.
         </p>
       </div>
       <div class="abox">
@@ -447,26 +441,16 @@
       <h2 class="sh-title">Hablemos de <em>algo</em></h2>
       <span class="sh-line"></span>
     </div>
-    <div class="cgrid">
-      <div class="cl rv">
-        <p>
-          Abierto a oportunidades como backend developer, colaboraciones y proyectos.
-          Si crees que encajo en tu equipo o tienes algo en mente, escríbeme.
-        </p>
-        <div class="clinks">
-          <a href="mailto:ernerourbonas@gmail.com" class="clk"><span class="ic">✉</span>ernerourbonas@gmail.com</a>
-          <a href="https://github.com/ernesro" target="_blank" rel="noopener" class="clk"><span class="ic">⌥</span>github.com/ernesro</a>
-          <a href="https://www.linkedin.com/in/ernestas-urbonas-020702220" target="_blank" rel="noopener" class="clk"><span class="ic">▣</span>linkedin.com/in/ernestas-urbonas</a>
-        </div>
-      </div>
-      <div class="cr rv">
-        <form action="https://formspree.io/f/TU_ID" method="POST" id="cf">
-          <div class="fg"><label class="fl" for="n">Nombre</label><input class="fi" type="text" id="n" name="name" placeholder="Tu nombre" required></div>
-          <div class="fg"><label class="fl" for="e">Email</label><input class="fi" type="email" id="e" name="email" placeholder="tu@email.com" required></div>
-          <div class="fg"><label class="fl" for="m">Mensaje</label><textarea class="fi" id="m" name="message" placeholder="Cuéntame..." required></textarea></div>
-          <button type="submit" class="fbtn">Enviar mensaje →</button>
-          <p id="fs" style="display:none;margin-top:1rem;font-size:.8rem;font-family:var(--mono);text-align:center"></p>
-        </form>
+    <div class="contact-block rv">
+      <p class="contact-intro">
+        Abierto a oportunidades como backend developer, colaboraciones y proyectos.
+        Si crees que encajo en tu equipo o tienes algo en mente, escríbeme directamente
+        por email o LinkedIn.
+      </p>
+      <div class="clinks">
+        <a href="mailto:ernesrourbonas@gmail.com" class="clk"><span class="ic">✉</span>ernesrourbonas@gmail.com</a>
+        <a href="https://www.linkedin.com/in/ernestas-urbonas-020702220" target="_blank" rel="noopener" class="clk"><span class="ic">▣</span>linkedin.com/in/ernestas-urbonas</a>
+        <a href="https://github.com/ernesro" target="_blank" rel="noopener" class="clk"><span class="ic">⌥</span>github.com/ernesro</a>
       </div>
     </div>
   </div>
@@ -488,17 +472,6 @@ const obs=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
 },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-
-const cf=document.getElementById('cf'),fs=document.getElementById('fs');
-cf.addEventListener('submit',async ev=>{
-  ev.preventDefault();
-  const b=cf.querySelector('button');b.textContent='Enviando...';b.disabled=true;
-  try{
-    const r=await fetch(cf.action,{method:'POST',body:new FormData(cf),headers:{Accept:'application/json'}});
-    if(r.ok){cf.reset();fs.style.display='block';fs.style.color='var(--olive)';fs.textContent='✓ Enviado. Te respondo pronto.';b.textContent='Enviado ✓'}
-    else throw 0;
-  }catch{fs.style.display='block';fs.style.color='var(--terra)';fs.textContent='✕ Error. Escríbeme por email.';b.textContent='Enviar mensaje →';b.disabled=false}
-});
 </script>
 </body>
 </html>
